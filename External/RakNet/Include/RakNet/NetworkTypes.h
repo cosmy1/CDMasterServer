@@ -59,7 +59,7 @@ struct PlayerID
 	 * @param input a player ID 
 	 * @return a reference to the current object 
 	 */
-	PlayerID& PlayerID::operator = ( const PlayerID& input )
+	PlayerID& operator = ( const PlayerID& input ) /* cosmy1 - fix C4596 */
 	{
 		binaryAddress = input.binaryAddress;
 		port = input.port;
