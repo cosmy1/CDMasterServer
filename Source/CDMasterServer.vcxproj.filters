@@ -1,2 +1,170 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" />
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="MasterCommon.cpp" />
+    <ClCompile Include="MasterServer.cpp" />
+    <ClCompile Include="MasterServerMain.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MasterCommon.h" />
+    <ClInclude Include="MasterServer.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\AES128.h">
+      <Filter>External\RakNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RakNet\Include\RakNet\ArrayList.h">
+      <Filter>External\RakNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RakNet\Include\RakNet\AsynchronousFileIO.h">
+      <Filter>External\RakNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RakNet\Include\RakNet\BigTypes.h">
+      <Filter>External\RakNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RakNet\Include\RakNet\BinarySearchTree.h">
+      <Filter>External\RakNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RakNet\Include\RakNet\BitStream.h">
+      <Filter>External\RakNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RakNet\Include\RakNet\CheckSum.h">
+      <Filter>External\RakNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RakNet\Include\RakNet\ClientContextStruct.h">
+      <Filter>External\RakNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RakNet\Include\RakNet\DataBlockEncryptor.h">
+      <Filter>External\RakNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RakNet\Include\RakNet\DistributedNetworkObject.h">
+      <Filter>External\RakNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RakNet\Include\RakNet\DistributedNetworkObjectHeader.h">
+      <Filter>External\RakNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RakNet\Include\RakNet\DistributedNetworkObjectManager.h">
+      <Filter>External\RakNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RakNet\Include\RakNet\DistributedNetworkObjectStub.h">
+      <Filter>External\RakNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RakNet\Include\RakNet\EncodeClassName.h">
+      <Filter>External\RakNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RakNet\Include\RakNet\ExtendedOverlappedPool.h">
+      <Filter>External\RakNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RakNet\Include\RakNet\GetTime.h">
+      <Filter>External\RakNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RakNet\Include\RakNet\HuffmanEncodingTree.h">
+      <Filter>External\RakNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RakNet\Include\RakNet\HuffmanEncodingTreeFactory.h">
+      <Filter>External\RakNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RakNet\Include\RakNet\HuffmanEncodingTreeNode.h">
+      <Filter>External\RakNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RakNet\Include\RakNet\InternalPacket.h">
+      <Filter>External\RakNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RakNet\Include\RakNet\InternalPacketPool.h">
+      <Filter>External\RakNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RakNet\Include\RakNet\LinkedList.h">
+      <Filter>External\RakNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RakNet\Include\RakNet\MTUSize.h">
+      <Filter>External\RakNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RakNet\Include\RakNet\Multiplayer.h">
+      <Filter>External\RakNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RakNet\Include\RakNet\NetworkObject.h">
+      <Filter>External\RakNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RakNet\Include\RakNet\NetworkTypes.h">
+      <Filter>External\RakNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RakNet\Include\RakNet\PacketEnumerations.h">
+      <Filter>External\RakNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RakNet\Include\RakNet\PacketPool.h">
+      <Filter>External\RakNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RakNet\Include\RakNet\PacketPriority.h">
+      <Filter>External\RakNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RakNet\Include\RakNet\Queue.h">
+      <Filter>External\RakNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RakNet\Include\RakNet\QueueLinkedList.h">
+      <Filter>External\RakNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RakNet\Include\RakNet\RakClient.h">
+      <Filter>External\RakNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RakNet\Include\RakNet\RakClientInterface.h">
+      <Filter>External\RakNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RakNet\Include\RakNet\RakNetStatistics.h">
+      <Filter>External\RakNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RakNet\Include\RakNet\RakNetworkFactory.h">
+      <Filter>External\RakNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RakNet\Include\RakNet\RakPeer.h">
+      <Filter>External\RakNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RakNet\Include\RakNet\RakPeerInterface.h">
+      <Filter>External\RakNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RakNet\Include\RakNet\RakServer.h">
+      <Filter>External\RakNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RakNet\Include\RakNet\RakServerInterface.h">
+      <Filter>External\RakNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RakNet\Include\RakNet\Rand.h">
+      <Filter>External\RakNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RakNet\Include\RakNet\ReliabilityLayer.h">
+      <Filter>External\RakNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RakNet\Include\RakNet\RPCNode.h">
+      <Filter>External\RakNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RakNet\Include\RakNet\RSACrypt.h">
+      <Filter>External\RakNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RakNet\Include\RakNet\SHA1.h">
+      <Filter>External\RakNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RakNet\Include\RakNet\SimpleMutex.h">
+      <Filter>External\RakNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RakNet\Include\RakNet\SocketLayer.h">
+      <Filter>External\RakNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RakNet\Include\RakNet\StringCompressor.h">
+      <Filter>External\RakNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RakNet\Include\RakNet\Types.h">
+      <Filter>External\RakNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RakCover\RakCover.h">
+      <Filter>External\RakCover</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="External">
+      <UniqueIdentifier>{8059dbd1-29f4-49b4-8bee-7c1cc059c4b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="External\RakNet">
+      <UniqueIdentifier>{0fe28bdb-9999-4f47-a2b5-5cc2283410a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="External\RakCover">
+      <UniqueIdentifier>{9e7e6373-6e24-45e5-b7b6-eb3f38ac94ec}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -15,6 +15,12 @@ The repository contains the complete master server source code, except for the f
 
 To allow the project to link with modern toolchains, an x86 import `.lib` was generated from `RakCoverDLL.dll` exports using the Visual Studio 2022 C++ toolchain.
 
+# Building
+
+A Visual Studio 2022 solution is provided inside Source folder for Win32 (x86) builds.
+
+The project is limited to 32-bit because it depends on the original `RakNet` and `RakCoverDLL` binaries, which are available only in x86 form.
+
 ## Acknowledgements
 
 Special thanks to Robert Clemens for granting permission to release this source code under an open-source license for the benefit of the community.

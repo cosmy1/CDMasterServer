@@ -9,15 +9,6 @@
       <Configuration>Release</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Debug|x64">
-      <Configuration>Debug</Configuration>
-      <Platform>x64</Platform>
-    </ProjectConfiguration>
-    <ProjectConfiguration Include="Release|x64">
-      <Configuration>Release</Configuration>
-      <Platform>x64</Platform>
-    </ProjectConfiguration>
-
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
@@ -31,59 +22,49 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
-    <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
-    <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
-  </PropertyGroup>
-
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
-  <ImportGroup Label="Shared" >
+  <ImportGroup Label="Shared">
   </ImportGroup>
-    <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-      <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    </ImportGroup>
-    <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-      <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    </ImportGroup>
-    <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-      <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    </ImportGroup>
-    <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-      <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    </ImportGroup>
-
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IntDir>obj\$(ShortProjectName)\$(Configuration)\</IntDir>
+    <OutDir>..\Build\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IntDir>obj\$(ShortProjectName)\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)_d</TargetName>
+    <OutDir>..\Build\</OutDir>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>..\External\RakNet\Include\;..\External\RakCover\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\External\RakCover\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>RakCoverDLL.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -92,42 +73,75 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>..\External\RakNet\Include\;..\External\RakCover\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\External\RakCover\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>RakCoverDLL.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
-      <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
-    </ClCompile>
-    <Link>
-      <SubSystem>Console</SubSystem>
-       <GenerateDebugInformation>true</GenerateDebugInformation>
-    </Link>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
-      <IntrinsicFunctions>true</IntrinsicFunctions>
-      <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
-    </ClCompile>
-    <Link>
-      <SubSystem>Console</SubSystem>
-       <GenerateDebugInformation>true</GenerateDebugInformation>
-    </Link>
-  </ItemDefinitionGroup>
-
-  <ItemGroup></ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="MasterCommon.cpp" />
+    <ClCompile Include="MasterServer.cpp" />
+    <ClCompile Include="MasterServerMain.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\External\RakCover\RakCover.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\AES128.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\ArrayList.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\AsynchronousFileIO.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\BigTypes.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\BinarySearchTree.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\BitStream.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\CheckSum.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\ClientContextStruct.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\DataBlockEncryptor.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\DistributedNetworkObject.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\DistributedNetworkObjectHeader.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\DistributedNetworkObjectManager.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\DistributedNetworkObjectStub.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\EncodeClassName.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\ExtendedOverlappedPool.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\GetTime.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\HuffmanEncodingTree.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\HuffmanEncodingTreeFactory.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\HuffmanEncodingTreeNode.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\InternalPacket.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\InternalPacketPool.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\LinkedList.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\MTUSize.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\Multiplayer.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\NetworkObject.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\NetworkTypes.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\PacketEnumerations.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\PacketPool.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\PacketPriority.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\Queue.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\QueueLinkedList.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\RakClient.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\RakClientInterface.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\RakNetStatistics.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\RakNetworkFactory.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\RakPeer.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\RakPeerInterface.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\RakServer.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\RakServerInterface.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\Rand.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\ReliabilityLayer.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\RPCNode.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\RSACrypt.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\SHA1.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\SimpleMutex.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\SocketLayer.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\StringCompressor.h" />
+    <ClInclude Include="..\External\RakNet\Include\RakNet\Types.h" />
+    <ClInclude Include="MasterCommon.h" />
+    <ClInclude Include="MasterServer.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
